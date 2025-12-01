@@ -7,8 +7,8 @@ import Divider from "@modules/common/components/divider"
 import TransferRequestForm from "@modules/account/components/transfer-request-form"
 
 export const metadata: Metadata = {
-  title: "Orders",
-  description: "Overview of your previous orders.",
+  title: "Các đơn hàng",
+  description: "Tổng quan các đơn hàng trước đó của bạn.",
 }
 
 export default async function Orders() {
@@ -21,16 +21,15 @@ export default async function Orders() {
   return (
     <div className="w-full" data-testid="orders-page-wrapper">
       <div className="mb-8 flex flex-col gap-y-4">
-        <h1 className="text-2xl-semi">Orders</h1>
+        <h1 className="text-2xl-semi">Các đơn hàng</h1>
         <p className="text-base-regular">
-          View your previous orders and their status. You can also create
-          returns or exchanges for your orders if needed.
+          Xem các đơn hàng trước đó của bạn và trạng thái của chúng.
         </p>
       </div>
       <div>
         <OrderOverview orders={orders} />
         <Divider className="my-16" />
-        <TransferRequestForm />
+        {/* <TransferRequestForm /> */}
       </div>
     </div>
   )

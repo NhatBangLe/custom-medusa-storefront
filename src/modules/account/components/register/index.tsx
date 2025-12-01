@@ -21,11 +21,11 @@ const Register = ({ setCurrentView }: Props) => {
       data-testid="register-page"
     >
       <h1 className="text-large-semi uppercase mb-6">
-        Become a My Store Member
+        Trở thành một thành viên của My Store
       </h1>
       <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your My Store Member profile, and get access to an enhanced
-        shopping experience.
+        Tạo một hồ sơ thành viên My Store và truy cập để nâng cao trải nghiệm
+        mua sắm.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">
@@ -59,7 +59,7 @@ const Register = ({ setCurrentView }: Props) => {
             data-testid="phone-input"
           />
           <Input
-            label="Password"
+            label="Mật khẩu"
             name="password"
             required
             type="password"
@@ -69,19 +69,20 @@ const Register = ({ setCurrentView }: Props) => {
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
         <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to My Store&apos;s{" "}
+          Bằng với việc tạo tài khoản, bạn đồng ý với các chính sách của My
+          Store về{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
             className="underline"
           >
-            Privacy Policy
+            Quyền riêng tư
           </LocalizedClientLink>{" "}
-          and{" "}
+          và{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
             className="underline"
           >
-            Terms of Use
+            Quy định sử dụng
           </LocalizedClientLink>
           .
         </span>

@@ -53,13 +53,13 @@ const AddAddress = ({
         onClick={open}
         data-testid="add-address-button"
       >
-        <span className="text-base-semi">New address</span>
+        <span className="text-base-semi">Địa chỉ mới</span>
         <Plus />
       </button>
 
       <Modal isOpen={state} close={close} data-testid="add-address-modal">
         <Modal.Title>
-          <Heading className="mb-2">Add address</Heading>
+          <Heading className="mb-2">Thêm dịa chỉ</Heading>
         </Modal.Title>
         <form action={formAction}>
           <Modal.Body>
@@ -94,7 +94,7 @@ const AddAddress = ({
                 data-testid="address-1-input"
               />
               <Input
-                label="Apartment, suite, etc."
+                label="Tòa nhà, phòng,..."
                 name="address_2"
                 autoComplete="address-line2"
                 data-testid="address-2-input"
@@ -116,7 +116,7 @@ const AddAddress = ({
                 />
               </div>
               <Input
-                label="Province / State"
+                label="Tỉnh"
                 name="province"
                 autoComplete="address-level1"
                 data-testid="state-input"
@@ -153,9 +153,9 @@ const AddAddress = ({
                 className="h-10"
                 data-testid="cancel-button"
               >
-                Cancel
+                Hủy bỏ
               </Button>
-              <SubmitButton data-testid="save-button">Save</SubmitButton>
+              <SubmitButton data-testid="save-button">Lưu</SubmitButton>
             </div>
           </Modal.Footer>
         </form>

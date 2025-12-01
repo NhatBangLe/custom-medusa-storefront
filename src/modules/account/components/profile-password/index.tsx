@@ -29,7 +29,7 @@ const ProfilePassword: React.FC<MyInformationProps> = ({ customer }) => {
       className="w-full"
     >
       <AccountInfo
-        label="Password"
+        label="Mật khẩu"
         currentInfo={
           <span>The password is not shown for security reasons</span>
         }
