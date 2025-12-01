@@ -103,14 +103,14 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
         <div className="grid grid-cols-1 gap-y-2">
           <div className="grid grid-cols-2 gap-x-2">
             <Input
-              label="First name"
+              label="Tên"
               name="first_name"
               defaultValue={billingAddress?.first_name || undefined}
               required
               data-testid="billing-first-name-input"
             />
             <Input
-              label="Last name"
+              label="Họ"
               name="last_name"
               defaultValue={billingAddress?.last_name || undefined}
               required
@@ -118,13 +118,13 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
             />
           </div>
           <Input
-            label="Company"
+            label="Công ty"
             name="company"
             defaultValue={billingAddress?.company || undefined}
             data-testid="billing-company-input"
           />
           <Input
-            label="Phone"
+            label="Số điện thoại"
             name="phone"
             type="phone"
             autoComplete="phone"
@@ -133,7 +133,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
             data-testid="billing-phone-input"
           />
           <Input
-            label="Address"
+            label="Địa chỉ"
             name="address_1"
             defaultValue={billingAddress?.address_1 || undefined}
             required
@@ -147,14 +147,14 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
           />
           <div className="grid grid-cols-[144px_1fr] gap-x-2">
             <Input
-              label="Postal code"
+              label="Mã bưu điện"
               name="postal_code"
               defaultValue={billingAddress?.postal_code || undefined}
               required
               data-testid="billing-postcal-code-input"
             />
             <Input
-              label="City"
+              label="Thành phố"
               name="city"
               defaultValue={billingAddress?.city || undefined}
               required

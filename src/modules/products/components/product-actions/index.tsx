@@ -94,17 +94,17 @@ export default function ProductActions({
 
   // check if the selected variant is in stock
   const inStock = useMemo(() => {
-    // If we don't manage inventory, we can always add to cart
+    // If we don't manage inventory, we can always Thêm vào giỏ hàng
     if (selectedVariant && !selectedVariant.manage_inventory) {
       return true
     }
 
-    // If we allow back orders on the variant, we can add to cart
+    // If we allow back orders on the variant, we can Thêm vào giỏ hàng
     if (selectedVariant?.allow_backorder) {
       return true
     }
 
-    // If there is inventory available, we can add to cart
+    // If there is inventory available, we can Thêm vào giỏ hàng
     if (
       selectedVariant?.manage_inventory &&
       (selectedVariant?.inventory_quantity || 0) > 0
@@ -112,7 +112,7 @@ export default function ProductActions({
       return true
     }
 
-    // Otherwise, we can't add to cart
+    // Otherwise, we can't Thêm vào giỏ hàng
     return false
   }, [selectedVariant])
 
@@ -177,10 +177,10 @@ export default function ProductActions({
           data-testid="add-product-button"
         >
           {!selectedVariant && !options
-            ? "Select variant"
+            ? "Chọn mẫu"
             : !inStock || !isValidVariant
-            ? "Out of stock"
-            : "Add to cart"}
+            ? "Hết hàng"
+            : "Thêm vào giỏ hàng"}
         </Button>
         <MobileActions
           product={product}

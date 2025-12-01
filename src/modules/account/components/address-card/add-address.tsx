@@ -66,14 +66,14 @@ const AddAddress = ({
             <div className="flex flex-col gap-y-2">
               <div className="grid grid-cols-2 gap-x-2">
                 <Input
-                  label="First name"
+                  label="Tên"
                   name="first_name"
                   required
                   autoComplete="given-name"
                   data-testid="first-name-input"
                 />
                 <Input
-                  label="Last name"
+                  label="Họ"
                   name="last_name"
                   required
                   autoComplete="family-name"
@@ -81,13 +81,13 @@ const AddAddress = ({
                 />
               </div>
               <Input
-                label="Company"
+                label="Công ty"
                 name="company"
                 autoComplete="organization"
                 data-testid="company-input"
               />
               <Input
-                label="Address"
+                label="Địa chỉ"
                 name="address_1"
                 required
                 autoComplete="address-line1"
@@ -101,14 +101,14 @@ const AddAddress = ({
               />
               <div className="grid grid-cols-[144px_1fr] gap-x-2">
                 <Input
-                  label="Postal code"
+                  label="Mã bưu điện"
                   name="postal_code"
                   required
                   autoComplete="postal-code"
                   data-testid="postal-code-input"
                 />
                 <Input
-                  label="City"
+                  label="Thành phố"
                   name="city"
                   required
                   autoComplete="locality"
@@ -129,7 +129,7 @@ const AddAddress = ({
                 data-testid="country-select"
               />
               <Input
-                label="Phone"
+                label="Số điện thoại"
                 name="phone"
                 autoComplete="phone"
                 data-testid="phone-input"

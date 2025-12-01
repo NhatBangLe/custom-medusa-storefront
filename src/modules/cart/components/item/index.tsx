@@ -77,6 +77,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           <div className="flex gap-2 items-center w-28">
             <DeleteButton id={item.id} data-testid="product-delete-button" />
             <CartItemSelect
+              placeholder="Chọn..."
               value={item.quantity}
               onChange={(value) => changeQuantity(parseInt(value.target.value))}
               className="w-14 h-10 p-4"

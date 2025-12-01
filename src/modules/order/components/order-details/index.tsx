@@ -15,7 +15,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
 
   return (
     <div>
-      <Text>
+      {/* <Text>
         We have sent the order confirmation details to{" "}
         <span
           className="text-ui-fg-medium-plus font-semibold"
@@ -24,28 +24,29 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
           {order.email}
         </span>
         .
-      </Text>
+      </Text> */}
       <Text className="mt-2">
-        Order date:{" "}
+        Thời điểm đặt hàng:{" "}
         <span data-testid="order-date">
-          {new Date(order.created_at).toDateString()}
+          {new Date(order.created_at).toLocaleString()}
         </span>
       </Text>
       <Text className="mt-2 text-ui-fg-interactive">
-        Order number: <span data-testid="order-id">{order.display_id}</span>
+        Số thứ tự đơn hàng:{" "}
+        <span data-testid="order-id">{order.display_id}</span>
       </Text>
 
       <div className="flex items-center text-compact-small gap-x-4 mt-4">
         {showStatus && (
           <>
             <Text>
-              Order status:{" "}
+              Trạng thái đơn hàng:{" "}
               <span className="text-ui-fg-subtle " data-testid="order-status">
                 {formatStatus(order.fulfillment_status)}
               </span>
             </Text>
             <Text>
-              Payment status:{" "}
+              Trạng thái thanh toán:{" "}
               <span
                 className="text-ui-fg-subtle "
                 sata-testid="order-payment-status"
