@@ -12,6 +12,8 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
 import { useRouter } from "next/navigation"
+import { downloadQR, generateQR } from "@lib/util/qrcode"
+import { ArrowDown } from "@medusajs/icons"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -39,6 +41,12 @@ export default function ProductActions({
   const [options, setOptions] = useState<Record<string, string | undefined>>({})
   const [isAdding, setIsAdding] = useState(false)
   const countryCode = useParams().countryCode as string
+
+  const [qrCode, setQrCode] = useState<string | null>(null)
+  useEffect(() => {
+    const url = window.location.href
+    generateQR(url).then(setQrCode)
+  }, [])
 
   // If there is only 1 variant, preselect the options
   useEffect(() => {
@@ -182,6 +190,24 @@ export default function ProductActions({
             ? "Hết hàng"
             : "Thêm vào giỏ hàng"}
         </Button>
+
+        {qrCode && (
+          <div className="py-2 self-center">
+            <span className="text-sm">Chia sẻ sản phẩm bằng mã QR</span>
+            <div className="flex flex-row gap-2 items-center">
+              <img src={qrCode} className="w-32 h-32" alt="QR Code" />
+              <button
+                className="size-10 bg-black flex items-center justify-center rounded-full transition-all hover:bg-slate-500 hover:size-11 duration-300"
+                type="button"
+                title="Tải mã QR"
+                onClick={() => downloadQR(qrCode)}
+              >
+                <ArrowDown color="#ffffff" />
+              </button>
+            </div>
+          </div>
+        )}
+
         <MobileActions
           product={product}
           variant={selectedVariant}
